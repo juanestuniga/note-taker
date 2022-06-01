@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require("fs");
+// Point Server to routes
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 // PORT
 const PORT = process.env.PORT || 5500;
@@ -17,10 +20,6 @@ app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-
-// Point Server to routes
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
 
 // Listener
 app.listen(PORT, function () {
