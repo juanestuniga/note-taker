@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const save = require('../db/save');
+var router = require('express').Router();
+var save = require('../db/save');
 
 // GET 
 router.get('/notes', (req, res) => {

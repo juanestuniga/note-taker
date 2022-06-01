@@ -1,13 +1,14 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const fs = require("fs");
-// Point Server to routes
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+var express = require('express');
+var app = express();
+var path = require('path');
+var fs = require("fs");
+
+// Routes
+var apiRoutes = require('./routes/apiRoutes');
+var htmlRoutes = require('./routes/htmlRoutes');
 
 // PORT
-const PORT = process.env.PORT || 5500;
+var PORT = process.env.PORT || 5500;
 
 // Parse data
 app.use(express.urlencoded({ extended: true }));

@@ -1,9 +1,9 @@
 var util = require("util");
 var fs = require("fs");
-const uuid = require("uuid").v1;
+var uuid = require("uuid").v1;
 
-const readFile = util.promisify(fs.readFile);
-const writeFile = util.promisify(fs.writeFile);
+var readFile = util.promisify(fs.readFile);
+var writeFile = util.promisify(fs.writeFile);
 
 class Save {
     read() {
