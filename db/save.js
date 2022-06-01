@@ -29,9 +29,14 @@ class Save {
             .then(() => this.newNote)
     }
     getNotes() {
-        return this.read()
-            .then(notes => {
-                return JSON.parse(notes) || [];
+        return this.read().then(notes => {
+            let parsedNotes;
+            try {
+                parsedNotes = [].concat(JSON.parse(notes));
+            } catch (err) {
+                parsedNotes = [];
+            }
+            return parsedNotes;
             })
     }
     deleteNote(id) {

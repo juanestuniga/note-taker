@@ -2,7 +2,7 @@ const router = require('express').Router();
 const save = require('../db/save');
 
 // GET 
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     save
         .getNotes()
         .then(notes => res.json(notes))
@@ -10,7 +10,7 @@ router.get('/api/notes', (req, res) => {
 });
 
 // POST 
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     save
         .addNote(req.body)
         .then((note) => res.json(note))
@@ -18,7 +18,7 @@ router.post('/api/notes', (req, res) => {
 });
 
 //DELETE 
-router.delete('/api/notes/:id', function (req, res) {
+router.delete('/notes/:id', function (req, res) {
     save
         .deleteNote(req.params.id)
         .then(() => res.json({ ok: true }))

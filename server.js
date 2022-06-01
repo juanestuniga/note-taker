@@ -12,18 +12,15 @@ app.use(express.urlencoded({ extended: true }));
 // Parse data
 app.use(express.json());
 
-// Point Server to routes
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 
-
+// Point Server to routes
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 // Listener
 app.listen(PORT, function () {
