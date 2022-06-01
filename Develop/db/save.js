@@ -7,10 +7,10 @@ const writeFile = util.promisify(fs.writeFile);
 
 class Save {
     read() {
-        return readFile("../Develop/db/db.json", "utf8")
+        return readFile("Develop/db/db.json", "utf8")
     }
     write(note) {
-        return writeFile("../Develop/db/db.json", JSON.stringify(note))
+        return writeFile("Develop/db/db.json", JSON.stringify(note))
     }
 
     getNotes() {
