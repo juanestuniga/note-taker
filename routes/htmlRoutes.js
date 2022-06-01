@@ -3,13 +3,13 @@ const router = require('express').Router();
 
 //notes.html function
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'))
+    res.sendFile(path.join(__dirname, 'public/notes.html'))
 })
 
 
 //index.html function
 router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Develop/public/index.html'))
+    res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
 module.exports = router;
