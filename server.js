@@ -1,25 +1,26 @@
-// Dependencies
 const express = require('express');
-
-// Creating an express server
 const app = express();
-
+const path = require('path');
+const fs = require("fs");
 
 // PORT
 const PORT = process.env.PORT || 3001;
 
-// Parse incoming string or array data
+// Parse data
 app.use(express.urlencoded({ extended: true }));
 
-// Parse incoming JSON data
+// Parse data
 app.use(express.json());
 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 
-// Point Server to series of routes
+// Point Server to routes
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
