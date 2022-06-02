@@ -5,6 +5,8 @@ body {
   padding: 0;
 }
 
+.navbar,
+.navbar-dark
 .bg-dark {
   background-color: #1b18bc !important;
 }
